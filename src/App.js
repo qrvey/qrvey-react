@@ -1,22 +1,21 @@
 import './App.css';
-import QrveyBuilders from './qrvey-builders/builders';
-import {importScript} from "./qrvey-builders/importScript";
-import type {BuildersConfig} from "./qrvey-builders/buildersConfig.interface";
+import {importScript} from "./qrvey-end-user/importScript";
+import type {EndUserConfig} from "./qrvey-end-user/endUserConfig.interface";
+import QrveyEndUser from "./qrvey-end-user/qrveyEndUser";
 
 function App() {
 
-  importScript('//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
+  importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
 
-  const configObject: BuildersConfig = {
-    domain: 'https://manualqastg.qrvey.com',
-    appid: 'L4NjFnKXK',
-    userid: 'pwWErgJ',
+  const configObject: EndUserConfig = {
+    domain: 'https://sandbox.qrveyapp.com',
+    appid: 'H2UuWJeIp',
     apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',
   };
 
   return (
     <div className="App">
-      <QrveyBuilders settings={configObject}/>
+      <QrveyEndUser settings={configObject}/>
     </div>
   );
 }
