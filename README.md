@@ -1,5 +1,5 @@
-<div align="center">
-	<img src="https://s3.amazonaws.com/cdn.qrvey.com/images/qrvey-logo.svg" width="200" />
+<div style="text-align: center">
+	<img alt="Qrvey Logo" src="https://s3.amazonaws.com/cdn.qrvey.com/images/qrvey-logo.svg" width="200" />
 </div>
 
 # Using Qrvey in React :cyclone:
@@ -51,7 +51,7 @@ For this example we are going to wrap the web component in a React Component:
 
 ## Using Builders
 
-The final step is the setup of a valid configuration object. We will work with a reduced interface of the builders configuration object. For more details about Qrvey configurations object, read [official docs](https://qrvey.com/).
+The final step is the setup of a valid configuration object. For more details about Qrvey configurations object, read [official docs](https://qrvey.com/).
 
 
     // app.js
@@ -64,8 +64,8 @@ The final step is the setup of a valid configuration object. We will work with a
 	    importScript('//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
 	    const configObject: BuildersConfig = {  
 		    domain: 'https://manualqastg.qrvey.com',  
-		    appid: 'L4NjFnKXK',  
-		    userid: 'pwWErgJ',  
+		    appid: 'L4NjFnKXK',
+		    userid: 'pwWErgJ',
 		    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',  
 	    }; 
 	    
@@ -84,9 +84,9 @@ In the root directory, run:
 
     npm start
 
-Open  [http://localhost:3000](http://localhost:3000)  to view it in the browser and have some fun creating your own dashboards.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ![Builders Demo](https://s3.amazonaws.com/cdn.qrvey.com/images/builders-demo.gif)
 
 ## Troubleshooting
-If you are experiencing issues using **qrvey-builders** in your React app please contact Qrvey team.
+If you are experiencing issues using **qrvey-builders** in your React, app please contact Qrvey team.
