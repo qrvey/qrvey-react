@@ -51,7 +51,7 @@ For this example we are going to wrap the web component in a React Component:
 
 ## Using End User
 
-The final step is the setup of a valid configuration object. For more details about Qrvey configurations object, read [official docs](https://partners.qrvey.com/documentation/).
+The final step is the setup of a valid configuration object. For more details about **qrvey-end-user** configuration object, read [official docs](https://partners.qrvey.com/documentation/).
 
 
     // app.js
