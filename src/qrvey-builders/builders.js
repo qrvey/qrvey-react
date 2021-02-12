@@ -1,6 +1,7 @@
 import React from 'react';
+import type {BuildersConfig} from "./buildersConfig.interface";
 
-const QrveyBuilders: React.FC<{ settings: string }> = ({settings}) => {
+const QrveyBuilders: React.FC<{ settings: BuildersConfig }> = ({settings}) => {
 
     window['buildersConfig'] = settings;
 

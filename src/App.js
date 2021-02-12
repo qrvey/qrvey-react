@@ -1,19 +1,13 @@
 import './App.css';
 import QrveyBuilders from './qrvey-builders/builders';
+import {importScript} from "./qrvey-builders/importScript";
+import type {BuildersConfig} from "./qrvey-builders/buildersConfig.interface";
 
 function App() {
 
-  const importScript = (url) => {
-    document.body.appendChild(Object.assign(document.createElement('script'), {
-      type: 'text/javascript',
-      defer: true,
-      src: url
-    }));
-  }
+  importScript('//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
 
-  importScript('https://580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
-
-  const configObject = {
+  const configObject: BuildersConfig = {
     domain: 'https://manualqastg.qrvey.com',
     appid: 'L4NjFnKXK',
     userid: 'pwWErgJ',

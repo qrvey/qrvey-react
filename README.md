@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+<div align="center">
+	<img src="https://s3.amazonaws.com/cdn.qrvey.com/images/qrvey-logo.svg" width="200" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Using Qrvey in React :cyclone:
 
-## Available Scripts
+Qrvey is a Web Component-based analytics platform, using multiples technologies such as [stenciljs](https://github.com/ionic-team/stencil), [Angular](https://github.com/angular/angular) and [vue.js](https://github.com/vuejs/vue).
 
-In the project directory, you can run:
+In this repository we are giving instructions to use the **qrvey-builders** component in [React 17](https://es.reactjs.org/).
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Installation](#installation)
+* [Creating Builders Component](#creating-builders-component)
+* [Using Builders](#using-builders)
+* [Demo](#demo)
+* [Troubleshooting](#troubleshooting)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Use a script tag linked to a CDN copy of your Qrvey loader distribution, for example:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    <script src="//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js" type="text/javascript">
 
-### `npm run build`
+Or you can load the script dynamically, in this example we are going to use this function in [app.js](https://github.com/qrvey/qrvey-react/blob/master/src/App.js):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+	const importScript = (url) => {  
+      document.body.appendChild(Object.assign(document.createElement('script'), {  
+	      type: 'text/javascript',  
+	      src: url  
+      }));}
+	
+	importScript("//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js");
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Creating Builders component
 
-### `npm run eject`
+Now you are ready to use the **qrvey-builders** tag. To avoid issues with non-scalar data (data that is not a string or number) **qrvey-builders** element was designed to work with a string property called **settings**, and a variable of the same name in **window**.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For this example we are going to wrap the web component in a React Component:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    // qrvey-builders/builders.js
+    import React from 'react';  
+    import type {BuildersConfig} from "./buildersConfig.interface";  
+    const QrveyBuilders: React.FC<{ settings: BuildersConfig }> = ({settings}) => {
+	    window['buildersConfig'] = settings;  
+	    return <qrvey-builders settings={'buildersConfig'}/>;  
+	};
+	
+	export default QrveyBuilders;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Using Builders
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The final step is the setup of a valid configuration object. We will work with a reduced interface of the builders configuration object. For more details about Qrvey configurations object, read [official docs](https://qrvey.com/).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    // app.js
+    import './App.css';  
+    import QrveyBuilders from './qrvey-builders/builders';  
+    import {importScript} from "./qrvey-builders/importScript";  
+    import type {BuildersConfig} from "./qrvey-builders/buildersConfig.interface";  
+    
+    function App() {  
+	    importScript('//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
+	    const configObject: BuildersConfig = {  
+		    domain: 'https://manualqastg.qrvey.com',  
+		    appid: 'L4NjFnKXK',  
+		    userid: 'pwWErgJ',  
+		    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',  
+	    }; 
+	    
+	    return (  
+		    <div className="App">  
+			    <QrveyBuilders settings={configObject}/>
+		    </div>
+	    );
+    }
+    
+    export default App;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Demo
 
-### Code Splitting
+In the root directory, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    npm start
 
-### Analyzing the Bundle Size
+Open  [http://localhost:3000](http://localhost:3000)  to view it in the browser and have some fun creating your own dashboards.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Builders Demo](https://s3.amazonaws.com/cdn.qrvey.com/images/builders-demo.gif)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Troubleshooting
+If you are experiencing issues using **qrvey-builders** in your React app please contact Qrvey team.
