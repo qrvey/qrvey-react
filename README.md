@@ -61,7 +61,7 @@ The final step is the setup of a valid configuration object. For more details ab
     import type {EndUserConfig} from "./qrvey-end-user/endUserConfig.interface";  
     
     function App() {  
-	    importScript('//580703004664postdev1qrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
+	    importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
 	    const configObject: BuildersConfig = {  
 		    domain: 'https://sandbox.qrveyapp.com',  
 		    appid: 'H2UuWJeIp',
