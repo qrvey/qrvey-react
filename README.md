@@ -1,4 +1,4 @@
-<div style="text-align: center">
+<div align="center">
 	<img alt="Qrvey Logo" src="https://s3.amazonaws.com/cdn.qrvey.com/images/qrvey-logo.svg" width="200" />
 </div>
 
