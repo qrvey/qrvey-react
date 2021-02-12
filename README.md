@@ -62,7 +62,7 @@ The final step is the setup of a valid configuration object. For more details ab
     
     function App() {  
 	    importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
-	    const configObject: BuildersConfig = {  
+	    const configObject: EndUserConfig = {  
 		    domain: 'https://sandbox.qrveyapp.com',  
 		    appid: 'H2UuWJeIp',
 		    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',  
