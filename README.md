@@ -86,7 +86,7 @@ In the root directory, run:
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Builders Demo](https://s3.amazonaws.com/cdn.qrvey.com/images/builders-demo.gif)
+![Preview Builders Demo](https://s3.amazonaws.com/cdn.qrvey.com/images/preview-builders.png)
 
 ## Troubleshooting
 If you are experiencing issues using **qrvey-builders** in your React, app please contact Qrvey team.
