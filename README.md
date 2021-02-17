@@ -36,7 +36,7 @@ Or you can load the script dynamically, in this example we are going to use this
 
 ## Creating End User component
 
-Now you are ready to use the **qrvey-end-user** tag. To avoid issues with non-scalar data (data that is not a string or number) **qrvey-builders** element was designed to work with a string property called **settings**, and a variable in **window** which name should be the exact value of the **settings** property.
+Now you are ready to use the **qrvey-end-user** element. To avoid issues with non-scalar data (data that is not a string or number) **qrvey-end-user** was designed to work with a string property called **settings**, and a variable in **window** which name should be the exact value of the **settings** property.
 For this example we are going to wrap the web component in a React Component:
 
     // qrvey-end-user/qrveyEndUser.js
