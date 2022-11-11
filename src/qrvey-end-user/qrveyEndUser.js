@@ -13,6 +13,8 @@ class QrveyEndUser extends Component {
 
     componentWillMount() {
         // Simple POST request with a JSON body using fetch
+        //Here you'll target your parentApp backend to create the JWT token. 
+        //For this sample we're targeting the qrvey backend to do it
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'x-api-key': 'DOCUMENTATION_DEMO_API_KEY'},
