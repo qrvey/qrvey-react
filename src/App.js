@@ -5,12 +5,10 @@ import QrveyEndUser from "./qrvey-end-user/qrveyEndUser";
 
 function App() {
 
-  importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
+  importScript('https://d19cyxem0w5akp.cloudfront.net/widgets-launcher/app.js');
 
   const configObject: EndUserConfig = {
-    domain: 'https://sandbox.qrveyapp.com',
-    appid: 'H2UuWJeIp',
-    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',
+    domain: 'https://sandbox.qrveyapp.com'
   };
 
   return (
