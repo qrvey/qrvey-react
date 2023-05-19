@@ -6,7 +6,7 @@
 
 Qrvey is a Web Component-based analytics platform, using multiples technologies such as [stenciljs](https://github.com/ionic-team/stencil), [Angular](https://github.com/angular/angular) and [vue.js](https://github.com/vuejs/vue).
 
-In this repository we are giving instructions to use the **qrvey-end-user** component in [React 17](https://es.reactjs.org/).
+In this repository we are giving instructions to use the **qrvey-end-user** component in [React 18](https://es.reactjs.org/).
 
 ## Table of contents
 
@@ -31,7 +31,7 @@ Or you can load the script dynamically, in this example we are going to use this
 	      src: url  
       }));}
 	
-	importScript("//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js");
+	importScript("//d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js");
 
 
 ## Creating End User component
@@ -40,9 +40,8 @@ Now you are ready to use the **qrvey-end-user** element. To avoid issues with no
 For this example we are going to wrap the web component in a React Component:
 
     // qrvey-end-user/qrveyEndUser.js
-    import React from 'react';  
-    import type {EndUserConfig} from "./endUserConfig.interface";  
-    const QrveyEndUser: React.FC<{ settings: EndUserConfig }> = ({settings}) => {
+    import React from 'react';   
+    const QrveyEndUser = ({settings}) => {
 	    window['endUserConfig'] = settings;
 	    return <qrvey-end-user settings={'endUserConfig'}/>;  
 	};
@@ -58,14 +57,14 @@ The final step is the setup of a valid configuration object. For more details ab
     import './App.css';  
     import QrveyEndUser from "./qrvey-end-user/qrveyEndUser";  
     import {importScript} from "./qrvey-end-user/importScript";  
-    import type {EndUserConfig} from "./qrvey-end-user/endUserConfig.interface";  
     
     function App() {  
-	    importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');  
+	    importScript('//d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js');  
 	    const configObject: EndUserConfig = {  
-		    domain: 'https://sandbox.qrveyapp.com',  
-		    appid: 'H2UuWJeIp',
-		    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',  
+		    "api_key": 'd41d8cd98f00b204e9800998ecf8427e',
+			"domain": 'https://demo.qrvey.com',
+			"page_id": 'wgDDvWmDk',
+			"app_id": '7QPNzup4O'  
 	    }; 
 	    
 	    return (  
