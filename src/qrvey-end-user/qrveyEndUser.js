@@ -1,7 +1,6 @@
 import React from 'react';
-import type {EndUserConfig} from "./endUserConfig.interface";
 
-const QrveyEndUser: React.FC<{ settings: EndUserConfig }> = ({settings}) => {
+const QrveyEndUser = ({settings}) => {
 
     window['endUserConfig'] = settings;
 

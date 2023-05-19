@@ -1,16 +1,16 @@
 import './App.css';
 import {importScript} from "./qrvey-end-user/importScript";
-import type {EndUserConfig} from "./qrvey-end-user/endUserConfig.interface";
 import QrveyEndUser from "./qrvey-end-user/qrveyEndUser";
 
 function App() {
 
-  importScript('//421850935145sandboxqrveywidgets.s3.amazonaws.com/widgets-launcher/app.js');
+  importScript('//d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js');
 
-  const configObject: EndUserConfig = {
-    domain: 'https://sandbox.qrveyapp.com',
-    appid: 'H2UuWJeIp',
-    apikey: 'TlyeWkQ5tH4m05r3WXUqc9ILayESPlhd6hJaCut0',
+  const configObject = {
+    "api_key": 'd41d8cd98f00b204e9800998ecf8427e',
+    "domain": 'https://demo.qrvey.com',
+    "page_id": 'wgDDvWmDk',
+    "app_id": '7QPNzup4O'
   };
 
   return (
