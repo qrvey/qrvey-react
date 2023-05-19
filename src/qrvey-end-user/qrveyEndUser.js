@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import type { EndUserConfig } from "./endUserConfig.interface";
 
 class QrveyEndUser extends Component {
 
@@ -17,8 +16,8 @@ class QrveyEndUser extends Component {
         //For this sample we're targeting the qrvey backend to do it
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'x-api-key': 'DOCUMENTATION_DEMO_API_KEY'},
-            body: JSON.stringify({ 'appid': 'H2UuWJeIp', 'userid': 'ZreovaM', 'expiresIn': '1w' })
+            headers: { 'Content-Type': 'application/json', 'x-api-key': 'd41d8cd98f00b204e9800998ecf8427e'},
+            body: JSON.stringify({ 'appid': '7QPNzup4O', 'pageid': 'wgDDvWmDk', 'userid': 'vc1xpuGjz', 'expiresIn': '1w' })
         };
 
         fetch(this.state.domain + '/devapi/v4/core/login/token', requestOptions)
